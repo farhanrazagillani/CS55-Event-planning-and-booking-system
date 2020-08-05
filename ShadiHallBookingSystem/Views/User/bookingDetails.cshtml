@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ShadiHallBookingSystem.Models.Booking>
+
+@{
+    ViewBag.Title = "bookingDetails";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewBag.Heading = "Bookings";
+}
+<div class="panel panel-default">
+    <div class="panel-heading main-color-bg" style="color:white">Booking Details</div>
+    <div class="panel-body">
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr></tr>
+                <tr>
+                    <th class="col-lg-3 col-md-3 col-sm-6 col-xs-4">Name</th>
+                    <th class="col-lg-3 col-md-3 col-sm-2 col-xs-3">Check IN</th>
+                    <th class="col-lg-3 col-md-3 col-sm-2 col-xs-3">Check OUt</th>
+                    <th class="col-lg-3 col-md-3 col-sm-2 col-xs-2">Total</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                @foreach (var n in Model)
+                {
+                    <tr>
+                        <td class="col-lg-2 col-md-5 col-sm-6 col-xs-8">
+                            @n.User.Name
+                        </td>
+                        <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                            @n.FromDate.Day/@n.FromDate.Month/@n.FromDate.Year
+                        </td>
+                        <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                            @n.ToDate.Day/@n.ToDate.Month/@n.ToDate.Year
+                        </td>
+                        <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                            @n.Total &nbsp;rupees
+                        </td>
+
+
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+

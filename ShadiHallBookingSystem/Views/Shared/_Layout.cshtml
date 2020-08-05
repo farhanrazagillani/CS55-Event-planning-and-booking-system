@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Css/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/admin/index">Admin Panel</a>
+            </div>
+
+            <form class="navbar-form navbar-right" action="/action_page.php">
+                <div class="form-group">
+                    <a class="nav-link" style="color:white" href="/Login/Logout">Logout</a>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="mydialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header  bg-primary">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="mydialog-title" class="modal-title"></h4>
+                </div>
+                <div id="mydialog-body" class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <header id="header" style="margin-top:-20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> @ViewBag.Heading <small>&nbsp; Manage your Site</small></h1>
+                    @*<h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Dashboard &nbsp; Manage your Site</small></h1>*@
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="~/login/index">@ViewBag.Heading</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-3">
+                    <div class="list-group">
+
+                        <a href="~/admin/index" class="list-group-item list-group-item-action"><span class="glyphicon glyphicon-cog"></span>&nbsp; Dashboard</a>
+                        <a href="~/admin/inventory" class="list-group-item list-group-item-action"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Add Record</a>
+                        <a href="~/login/Registration" class="list-group-item list-group-item-action "><span class="glyphicon glyphicon-book"></span>&nbsp;Register Admin</a>
+                        <a href="~/Admin/Edit" class=" list-group-item list-group-item-action "><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete Admin</a>
+
+                        <a href="~/admin/Records" class="list-group-item list-group-item-action "><span class="glyphicon glyphicon-edit"></span>&nbsp;Total Records</a>
+                        <a href="~/admin/Messages" class="list-group-item list-group-item-action "><span class="glyphicon glyphicon-tags"></span>&nbsp;View Messages</a>
+
+
+                    </div>
+                </section>
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr />
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Shadi Hall Booking System</p>
+    </footer>
+
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(".dg-btndelete").click(function (event) {
+            event.preventDefault();
+            var myurl = $(this).attr("href");
+            var caption = $(this).data("caption");
+            $.ajax(
+                {
+                    url: myurl
+                }
+            ).done(function (result) {
+
+
+                $("#mydialog-title").html(caption);
+
+                $("#mydialog-body").html(result);
+
+                $("#mydialog").modal();
+
+
+
+            });
+        });
+    </script>
+</body>
+</html>

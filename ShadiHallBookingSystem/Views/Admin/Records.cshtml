@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ShadiHallBookingSystem.Models.ShaadiHall>
+@{
+    ViewBag.Title = "Records";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr></tr>
+        <tr>
+            <th class="col-lg-2 col-md-2 col-sm-6 col-xs-8">Id</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-8">Name</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-4">Town</th>
+            <th class="col-lg-2 col-md-2 col-sm-6 col-xs-8">Address</th>
+            <th class="col-lg-4 col-md-4 col-sm-6 hidden-xs">Description</th>
+
+
+        </tr>
+    </thead>
+    <tbody id="tablebody">
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td class="col-lg-2 col-md-5 col-sm-6 col-xs-8">
+                    @n.S_ID
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.Name
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.Town
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.Address
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.Description
+                </td>
+
+
+               
+            </tr>
+        }
+
+    </tbody>
+</table>

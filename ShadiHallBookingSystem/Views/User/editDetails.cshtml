@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ShadiHallBookingSystem.Models.Booking>
+
+@{
+                /**/
+
+                ViewBag.Title = "bookingDetails";
+                Layout = "~/Views/Shared/_Layout1.cshtml";
+                ViewBag.Heading = "Bookings";
+}
+
+@*<div>
+
+        <label style="color:red">@ViewBag.error</label>
+    </div>*@
+
+<div class="panel panel-default">
+    <div class="panel-heading main-color-bg" style="color:white">Edit Booking</div>
+    <div class="panel-body">
+
+
+
+
+
+        <input type="hidden" id="response" value="@ViewBag.error" />
+
+        <table class="table table-bordered">
+            <thead>
+                <tr></tr>
+                <tr>
+                    <th class="col-lg-2 col-md-2 col-sm-4 col-xs-2">Name</th>
+                    <th class="col-lg-3 col-md-3 col-sm-2 col-xs-3">Check IN</th>
+                    <th class="col-lg-3 col-md-3 col-sm-2 col-xs-3">Check OUt</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Total</th>
+                    <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Edit</th>
+
+
+
+
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                @foreach (var n in Model)
+                {
+                    <tr>
+                        <td class="col-lg-2 col-md-5 col-sm-6 col-xs-8">
+                            @n.User.Name
+                        </td>
+                        <td class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                            @n.FromDate.Day/@n.FromDate.Month/@n.FromDate.Year
+                        </td>
+                        <td class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                            @n.ToDate.Day/@n.ToDate.Month/@n.ToDate.Year
+
+
+                        </td>
+                        <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                            @n.Total &nbsp;rupees
+                        </td>
+                        <td class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+                            <a href="/user/edit/@n.B_ID" class="dg-btndelete btn btn-xs btn-danger" data-caption="Do you want to edit this record"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+
+
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+
+        @section Scripts{
+            <script>
+
+                $(window).load(function () {
+
+
+                    var a = $("#response").val();
+                    if (a != "") {
+                        alert(a);
+                    }
+
+
+
+                });
+
+
+
+
+            </script>
+        }

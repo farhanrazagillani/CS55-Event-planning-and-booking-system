@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ShadiHallBookingSystem.Models.Message>
+
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Heading = "Messages";
+}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr></tr>
+        <tr>
+            <th class="col-lg-2 col-md-2 col-sm-6 col-xs-8">Id</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-8">Name</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-4">Email</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-4">Subject</th>
+            <th class="col-lg-4 col-md-2 col-sm-3 col-xs-4">Messages</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody id="tablebody">
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td class="col-lg-2 col-md-5 col-sm-6 col-xs-8">
+                    @n.id
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.name
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.email
+                </td>
+                <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    @n.subject
+                </td>
+                <td class="col-lg-4 col-md-3 col-sm-3 hidden-xs">
+                    @n.message
+                </td>
+               
+
+
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script>
+
+
+</script>
+

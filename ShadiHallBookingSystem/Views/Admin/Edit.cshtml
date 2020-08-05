@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShadiHallBookingSystem.Models.Admin>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr></tr>
+        <tr>
+            <th class="col-lg-2 col-md-2 col-sm-6 col-xs-8">Id</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-8">Email</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-4">Password</th>
+            <th class="col-lg-2 col-md-2 col-sm-3 col-xs-4">Action</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody id="tablebody">
+        @foreach (var n in Model)
+        {
+        <tr>
+            <td class="col-lg-2 col-md-5 col-sm-6 col-xs-8">
+                @n.A_ID
+            </td>
+            <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                @n.Email
+            </td>
+            <td class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                @n.Password
+            </td>
+            <td class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+                <a href="/admin/delete/@n.A_ID" class="dg-btndelete btn btn-xs btn-danger" data-caption="Do you want to delete this record"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+
+
+
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<script>
+       
+
+</script>
+

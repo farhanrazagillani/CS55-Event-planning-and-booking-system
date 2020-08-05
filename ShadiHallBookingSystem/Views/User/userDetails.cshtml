@@ -1,0 +1,44 @@
+﻿@model ShadiHallBookingSystem.Models.User
+@{
+    ViewBag.Title = "userDetails";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewBag.Heading = "User Details";
+}
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        padding-bottom: 50px;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading main-color-bg" style="color:white">User Profile Card</div>
+    <div class="panel-body">
+        @*<h2 style="text-align:center"></h2>*@
+
+        <div class="card" style="text-align:center">
+            
+            <img src="~/Image/6824367.png" alt="John" style="width:50%;">
+           
+            <h1 >@Model.Name</h1>
+            <hr />
+
+            
+            <p class="title"> <h3>Email-ID </h3>  @Model.Email_ID</p>
+           
+
+            <h3>Address</h3><p>@Model.Address</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+        </div>
+</div>
+    </div>
+

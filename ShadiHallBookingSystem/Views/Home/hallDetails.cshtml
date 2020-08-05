@@ -1,0 +1,422 @@
+﻿@model ShadiHallBookingSystem.Models.Shift
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Travel</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="~/tem/css/linearicons.css">
+    <link rel="stylesheet" href="~/tem/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/tem/css/bootstrap.css">
+    <link rel="stylesheet" href="~/tem/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/tem/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/tem/css/nice-select.css">
+    <link rel="stylesheet" href="~/tem/css/animate.min.css">
+    <link rel="stylesheet" href="~/tem/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/tem/css/main.css">
+</head>
+<body>
+
+    <!-- start banner Area -->
+    <section class="about-banner relative">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        MARQUEE DETAILS
+                    </h1>
+                    <p class="text-white link-nav"><a href="/home/index">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/home/hallDetails"> Marquee Details</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- End banner Area -->
+    <!-- Start insurence-one Area -->
+    <section class="insurence-one-area section-gap">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 insurence-left">
+                    <h1>@Model.ShaadiHall.Name</h1>
+                    @*<b><a href="/home/booking/@Model.Sh_ID"style="font-size:25px">Book Now </a> <br /></b>*@
+                    <form action="/Home/hallDetails/@Model.Sh_ID" method="POST">
+                        <article></article>
+                        <script src="//checkout.stripe.com/v2/checkout.js"
+                                class="stripe-button"
+                                data-key="pk_test_4GsAFU8K9dobIsIuevGBZuEQ00zNfntuam"
+                                data-locale="auto"
+                                data-description="Give Credit Card Info"
+                                data-amount="">
+                        </script>
+                    </form>
+
+                    <h5> Rs. @Model.Price  </h5> <small> @Model.Name  </small>
+
+
+                    <p>
+                        <br />
+
+                        @Model.ShaadiHall.Description
+
+                    </p>
+
+                    <img class="img-fluid img-one" src="@Url.Content(Model.ShaadiHall.Image)" alt="">
+
+
+                </div>
+
+                <div class="col-lg-6 insurence-right">
+
+
+
+                    <div class="list-wrap">
+                        <ul>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span class="glyphicon glyphicon-send"></span><h3>SERVICES</h3>
+
+                                <hr />
+                            </li>
+
+
+                            <li class="d-flex justify-content-between align-items-center">
+
+
+
+
+                                <span>Wifi</span>
+                                @if (ViewBag.DataPoints.Wifi == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Music System</span>
+                                @if (ViewBag.DataPoints.musicSystem == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Decoration</span>
+                                @if (ViewBag.DataPoints.Decoration == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Specia Lights</span>
+                                @if (ViewBag.DataPoints.speciaLights == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Lights</span>
+                                @if (ViewBag.DataPoints.Lights == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Dj</span>
+                                @if (ViewBag.DataPoints.Dj == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Parking for Bike 500</span>
+                                @if (ViewBag.DataPoints.bikeParking == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Parking Capacity Car 500</span>
+                                @if (ViewBag.DataPoints.carParking == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Air Condition</span>
+
+                                @if (ViewBag.DataPoints.AirCondition == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Social Media Pages</span>
+
+                                @if (ViewBag.DataPoints.socialMediaPages == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Seggretion</span>
+
+                                @if (ViewBag.DataPoints.Seggretion == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Catering</span>
+
+                                @if (ViewBag.DataPoints.Catering == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Projector</span>
+                                @if (ViewBag.DataPoints.Projector == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Stage Decoration </span>
+
+                                @if (ViewBag.DataPoints.stageDecoration == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Ladies Waitress</span>
+                                @if (ViewBag.DataPoints.ladiesWaitress == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>People Capacity</span>
+
+                                @*@if (ViewBag.DataPoints.peopleCapacity == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }*@
+
+                                <span>
+                                    @ViewBag.DataPoints.peopleCapacity
+                                </span>
+
+
+
+                            </li>
+                            @*<li class="d-flex justify-content-between align-items-center">
+                                <span>Sitting 500</span>
+
+                                @if (ViewBag.DataPoints.sitting == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+
+                            </li>*@
+                            @*<li class="d-flex justify-content-between align-items-center">
+                                <span>Round Table Capacity</span>
+
+                                @if (ViewBag.DataPoints.roundTableCapacity == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+
+                            </li>*@
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span>Electricity</span>
+                                @if (ViewBag.DataPoints.Electricity == "on")
+                                {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+                            </li>
+
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End insurence-one Area -->
+    <!-- Start insurence-two Area -->
+    <!-- End insurence-two Area -->
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        
+                            <li><img src="img/i1.jpg" alt=""></li>
+                            <li><img src="img/i2.jpg" alt=""></li>
+                            <li><img src="img/i3.jpg" alt=""></li>
+                            <li><img src="img/i4.jpg" alt=""></li>
+                            <li><img src="img/i5.jpg" alt=""></li>
+                            <li><img src="img/i6.jpg" alt=""></li>
+                            <li><img src="img/i7.jpg" alt=""></li>
+                            <li><img src="img/i8.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                
+            </div>
+        </div>
+    </footer>
+    <!-- End footer Area -->
+    <script src="~/tem/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="~/tem/js/popper.min.js"></script>
+    <script src="~/tem/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="~/tem/js/jquery-ui.js"></script>
+    <script src="~/tem/js/easing.min.js"></script>
+    <script src="~/tem/js/hoverIntent.js"></script>
+    <script src="~/tem/js/superfish.min.js"></script>
+    <script src="~/tem/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/tem/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/tem/js/jquery.nice-select.min.js"></script>
+    <script src="~/tem/js/owl.carousel.min.js"></script>
+    <script src="~/tem/js/mail-script.js"></script>
+    <script src="~/tem/js/main.js"></script>
+</body>
+</html>

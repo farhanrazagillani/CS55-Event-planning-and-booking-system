@@ -1,0 +1,223 @@
+﻿
+@{
+    ViewBag.Title = "Inventory";
+    ViewBag.Heading = "Adding Record";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading main-color-bg" style="color:white">Shaadi Hall Record</div>
+    <div class="panel-body">
+
+
+        <form method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend><b>Personalia:</b></legend>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Name</label>
+                        <input type="text" class="form-control" name="Name" placeholder="Name"required pattern="[a-zA-Z ]+" minlength="8" maxlength="20">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Local Town</label>
+                        <input type="text" class="form-control" name="Town" placeholder="Johartown / Iqbal Town"required>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" name="Address" placeholder="1234 Main St"required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Description</label>
+                    <textarea name="Description" type="text" class="form-control" placeholder="  "required>
+                     </textarea>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label>Picture</label>
+                    <br />
+                    <input type="file" name="Image"class="form-control"required>
+                </div>
+            </fieldset>
+            <br />
+            <br />
+
+            <fieldset>
+                <legend><b>Prices:</b></legend>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4">Noon Time</label>
+                        <input type="number" name="noonPrice"class="form-control" placeholder="1500.."required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword4">Evening Time</label>
+                        <input type="number"name="eveningPrice" class="form-control" placeholder="465..."required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword4">Night Time</label>
+                        <input type="number"name="nightPrice" class="form-control" placeholder="8587.."required>
+                    </div>
+                </div>
+
+
+
+
+
+            </fieldset>
+            <br />
+            <br />
+
+
+            <fieldset>
+
+                <legend><b>Services:</b></legend>
+
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <label for="inputPassword4">People Capacity </label>
+
+                        <input type="number" class="form-control" name="peopleCapacity"  placeholder="total sitting...."required>
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Wifi">
+                        <label class="custom-control-label" for="customCheck1">WIFI</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="musicSystem">
+                        <label class="custom-control-label" for="customCheck1">
+                            Music System
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Decoration"required>
+                        <label class="custom-control-label" for="customCheck1">Decoration</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="speciaLights">
+                        <label class="custom-control-label" for="customCheck1">
+                            Specia Lights
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Lights" required>
+                        <label class="custom-control-label" for="customCheck1">Lights</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Dj">
+                        <label class="custom-control-label" for="customCheck1">Dj</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="bikeParking">
+                        <label class="custom-control-label" for="customCheck1">
+                            Parking for Bike 500
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="carParking">
+                        <label class="custom-control-label" for="customCheck1">
+                            Parking Capcity Car 500
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="AirCondition" required>
+                        <label class="custom-control-label" for="customCheck1">AirCondition</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="socialMediaPages">
+                        <label class="custom-control-label" for="customCheck1">
+                            Social Media Pages
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Seggretion">
+                        <label class="custom-control-label" for="customCheck1">
+                            Seggretion
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Catering"required>
+                        <label class="custom-control-label" for="customCheck1">Catering</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Projector">
+                        <label class="custom-control-label" for="customCheck1">Projector</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="stageDecoration"required>
+                        <label class="custom-control-label" for="customCheck1">
+                            Stage Decoration
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="ladiesWaitress">
+                        <label class="custom-control-label" for="customCheck1">
+                            Ladies Waitress
+                        </label>
+                    </div>
+                </div>
+
+              
+               
+                <div class="form-group col-md-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="Electricity"required>
+                        <label class="custom-control-label" for="customCheck1">
+                            Electricity
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+            @*<div class="form-group col-md-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>*@
+            <br />
+            <input type="submit" class="btn btn-default" value="Submit">
+        </form>
+
+       
+
+
+    </div>
+    </div>
+
+
